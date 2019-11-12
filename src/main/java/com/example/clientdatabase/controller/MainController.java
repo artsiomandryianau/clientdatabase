@@ -25,17 +25,17 @@ public class MainController {
     }
 
 
-    @GetMapping("/listOfClients")
+    @GetMapping("/main")
     public String main(Model model) {
         Iterable<Client> clients = clientRepo.findAll();
 
         clients = clientRepo.findAll();
         model.addAttribute("clients", clients);
 
-        return "listOfClients";
+        return "main";
     }
 
-    @PostMapping
+    @PostMapping("/main")
     public String add(@RequestParam String name, @RequestParam String surname, @RequestParam String email, @RequestParam String dateOfBirth,
                       Map<String, Object> model) {
         Client client = new Client(name, surname, email, dateOfBirth);
@@ -46,7 +46,7 @@ public class MainController {
 
         model.put("clients", clients);
 
-        return "listOfClients";
+        return "main";
     }
 
 
