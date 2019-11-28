@@ -3,11 +3,14 @@ package com.example.clientdatabase.domain;
 
 import javax.persistence.*;
 import java.util.Random;
+import java.util.Set;
 
 @Entity
+@Table(name = "CLIENT")
 public class Client {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "CLIENT_ID")
     private Integer id;
 
     private String name;
@@ -17,16 +20,28 @@ public class Client {
     private String accountNumber;
     private String ballance;
 
+    @OneToMany(fetch = FetchType.EAGER,mappedBy="Client",cascade = CascadeType.ALL)
+    private Set<City> clientCities;
+
 
     public Client() { }
 
-    public Client(String name, String surname, String email, String dateOfBirth) {
+    public Client(String name, String surname, String email, String dateOfBirth, Set<City> clientCities) {
         this.name = name;
         this.surname = surname;
         this.email = email;
         this.dateOfBirth = dateOfBirth;
         this.accountNumber = generateAccountNumber();
         this.ballance = "0.00";
+        this.clientCities = clientCities;
+    }
+
+    public Set<City> getClientCities() {
+        return clientCities;
+    }
+
+    public void setClientCities(Set<City> clientCities) {
+        this.clientCities = clientCities;
     }
 
     public Integer getId() {

@@ -21,6 +21,9 @@ Add new client
             <input type="text" class="form-control" name="email" placeholder="enter client's email">
         </div>
         <div class="form-group">
+            <input type="text" class="form-control" name="city" placeholder="Enter name of city">
+        </div>
+        <div class="form-group">
             <input type="text" class="form-control" name="dateOfBirth" placeholder="enter client's date of birth">
         </div>
         <input type="hidden" name="_csrf" value="${_csrf.token}" />
@@ -29,6 +32,34 @@ Add new client
         </div>
     </form>
 </div>
+
+
+<a class="btn btn-primary" data-toggle="collapse" href="#collapseExample1" role="button" aria-expanded="false" aria-controls="collapseExample1">
+    Add new client1
+</a>
+
+
+<div class="collapse" id="collapseExample1">
+    <div class="form-group mt-3">
+        <form method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <input type="text" class="form-control" name="name" placeholder="enter client name">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" name="surname" placeholder="enter client's surname">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" name="email" placeholder="enter client's email">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" name="dateOfBirth" placeholder="enter client's date of birth">
+            </div>
+            <input type="hidden" name="_csrf" value="${_csrf.token}" />
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Add</button>
+            </div>
+        </form>
+    </div>
 </div>
 
 
