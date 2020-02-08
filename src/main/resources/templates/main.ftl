@@ -20,9 +20,7 @@ Add new client
         <div class="form-group">
             <input type="text" class="form-control" name="email" placeholder="enter client's email">
         </div>
-        <div class="form-group">
-            <input type="text" class="form-control" name="city" placeholder="Enter name of city">
-        </div>
+
         <div class="form-group">
             <input type="text" class="form-control" name="dateOfBirth" placeholder="enter client's date of birth">
         </div>
